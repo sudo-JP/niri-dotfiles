@@ -1,0 +1,72 @@
+binds {
+    Mod+T { spawn "kitty"; }
+    Mod+D { close-window; }
+    Mod+M { spawn "wlogout"; }
+    Mod+E { spawn "nemo"; }
+    Mod+V { toggle-window-floating; }
+
+    Mod+SPACE { spawn "~/.config/rofi/launcher.sh"; }
+    // Print -> screenshot script, skip for now
+
+    Mod+N { spawn "swaync-client" "-t"; }
+    Mod+Q { spawn "hyprlock"; }
+
+    // Lid switch handling differs, see note below
+
+    XF86AudioRaiseVolume { spawn "pactl" "--" "set-sink-volume" "0" "+10%"; }
+    XF86AudioLowerVolume { spawn "pactl" "--" "set-sink-volume" "0" "-10%"; }
+    XF86AudioMute { spawn "pactl" "--" "set-sink-mute" "0" "toggle"; }
+    // XF86AudioMicMute -> mutemic script, skip for now
+    XF86MonBrightnessDown { spawn "brightnessctl" "s" "10%-"; }
+    XF86MonBrightnessUp { spawn "brightnessctl" "s" "+10%"; }
+
+    // Vim-style focus and move (column left/right, window up/down within column)
+    Mod+H { focus-column-left; }
+    Mod+L { focus-column-right; }
+    Mod+K { focus-window-up; }
+    Mod+J { focus-window-down; }
+
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+L { move-column-right; }
+    Mod+Shift+K { move-window-up; }
+    Mod+Shift+J { move-window-down; }
+
+    // Mod+P -> wallpaper script, skip for now
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+Shift+0 { move-column-to-workspace 10; }
+
+    // Mod+Shift+S -> waybar toggle script, skip for now
+
+    Mod+Down { focus-workspace-down; }
+    Mod+Up { focus-workspace-up; }
+
+    Mod+Shift+Right { set-column-width "+10%"; }
+    Mod+Shift+Left { set-column-width "-10%"; }
+    Mod+Shift+Up { set-window-height "-10%"; }
+    Mod+Shift+Down { set-window-height "+10%"; }
+    
+    Mod+Comma { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    Mod+F { maximize-column; }
+}

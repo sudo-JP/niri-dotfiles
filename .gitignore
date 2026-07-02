@@ -3,3 +3,5 @@
 
 # Files not to ignore
 !/.gitignore
+!/niri
+!/kitty
